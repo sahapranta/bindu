@@ -32,9 +32,9 @@ module.exports = {
     // router: {
     // middleware: ["auth", "guest"]
     // },
-    router: {
-        base: "/bindu/"
-    },
+    // router: {
+        // base: "/bindu/"
+    // },
     plugins: [
         // "~components/global",
         // "~plugins/i18n",
