@@ -30,8 +30,11 @@ module.exports = {
     loading: { color: "#007bff" },
     css: ["assets/scss/style.scss"],
     // router: {
-        // middleware: ["auth", "guest"]
+    // middleware: ["auth", "guest"]
     // },
+    router: {
+        base: "/bindu/"
+    },
     plugins: [
         // "~components/global",
         // "~plugins/i18n",
