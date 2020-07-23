@@ -15,7 +15,7 @@ class DeploymentController extends Controller
         if (hash_equals($githubHash, $localHash)) {
             Artisan::call('down');
             exec('git fetch');
-            exec('git pull --no-commit');
+            exec('git pull');
             Artisan::call('up');
             return TRUE;
         }
