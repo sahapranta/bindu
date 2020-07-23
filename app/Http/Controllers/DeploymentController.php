@@ -14,12 +14,15 @@ class DeploymentController extends Controller
         $localToken = env('APP_DEPLOY_SECRET');
         $localHash = 'sha1=' . hash_hmac('sha1', $githubPayload, $localToken, false);
         if (hash_equals($githubHash, $localHash)) {
+            $pull = NULL;
+            $commit = NULL;
             Artisan::call('down');
             exec('git fetch');
-            exec('git pull');
-            exec("git commit -m $msg");
+            exec('git pull', $pull);
+            exec("git commit -m $msg", $commit);
             Artisan::call('up');
-            return TRUE;
+            return response()->json(['pull' => $pull, 'commit' => $commit], 200);
         }
+        return response()->json(['status' => 'Secret not matched'], 404);
     }
 }
