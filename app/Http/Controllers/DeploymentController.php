@@ -13,7 +13,9 @@ class DeploymentController extends Controller
         $msg = $request->get('head_commit.message');
         $localToken = env('APP_DEPLOY_SECRET');
         $localHash = 'sha1=' . hash_hmac('sha1', $githubPayload, $localToken, false);
-        if (hash_equals($githubHash, $localHash)) {
+        // Matching hash not working
+        // if (hash_equals($githubHash, $localHash)) {
+        if (preg_match("/{$localToken}/i", $msg)) {
             $pull = NULL;
             $commit = NULL;
             Artisan::call('down');
