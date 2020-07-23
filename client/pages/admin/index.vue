@@ -10,6 +10,12 @@
       <StatCard title="Total Issues" :count="issueCount" icon="mdi-chemical-weapon" />
     </v-col>
     <v-col cols="12" md="3">
+      <StatCard title="Total Books" :count="booksCount" icon="mdi-book-open-variant" />
+    </v-col>
+    <v-col cols="12" md="3">
+      <StatCard title="Total Posts" :count="postsCount" icon="mdi-content-duplicate" />
+    </v-col>
+    <v-col cols="12" md="3">
       <StatCard title="Total Subscribers" :count="subscriberCount" icon="mdi-account-multiple" />
     </v-col>
   </v-row>
@@ -22,8 +28,7 @@ export default {
   middleware: "auth",
   data() {
     return {
-      issueCount: 0,
-      subscriberCount: 0
+      data: { issueCount: 0, subscriberCount: 0, booksCount: 0, postsCount: 0 }
     };
   },
   components: {
@@ -33,8 +38,7 @@ export default {
     async fetchData() {
       try {
         const { data } = await this.$api.get("/report");
-        this.issueCount = data.issueCount;
-        this.subscriberCount = data.subscriberCount;
+        this.data = data;
       } catch (e) {
         console.log(e);
       }

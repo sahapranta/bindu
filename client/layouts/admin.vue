@@ -102,6 +102,9 @@ export default {
   components: {
     CoreFooter
   },
+  head() {
+    return { title: "Admin Dashboard Panel" };
+  },
   data() {
     return {
       drawer: false,
