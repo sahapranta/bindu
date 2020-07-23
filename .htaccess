@@ -16,7 +16,9 @@
 
 
     # 1 Month for most static assets
-    <filesMatch ".(css|jpg|jpeg|png|gif|js|ico)$">
+    <filesMatch ".(css|jpg|jpeg|png|gif|js|ico|pdf)$">
+        Header always set Access-Control-Allow-Origin "*"
+        Header set Access-Control-Allow-Credentials true
         Header set Cache-Control "max-age=2592000, public"
     </filesMatch>
 
