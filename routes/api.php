@@ -71,3 +71,4 @@ Route::put('/subscribers/{subscriber}', "SubscriberController@update");
 Route::delete('/subscribers/{subscriber}', "SubscriberController@delete");
 
 Route::get('/report', "ReportController");
+Route::post('/autodeploy', "DeploymentController@deploy");

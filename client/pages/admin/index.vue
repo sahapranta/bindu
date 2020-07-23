@@ -7,16 +7,20 @@
       <StatCard title="Today Downloads" count="2" icon="mdi-arrow-down-bold-box-outline" />
     </v-col>
     <v-col cols="12" md="3">
-      <StatCard title="Total Issues" :count="issueCount" icon="mdi-chemical-weapon" />
+      <StatCard title="Total Issues" :count="data.issueCount" icon="mdi-chemical-weapon" />
     </v-col>
     <v-col cols="12" md="3">
-      <StatCard title="Total Books" :count="booksCount" icon="mdi-book-open-variant" />
+      <StatCard title="Total Books" :count="data.booksCount" icon="mdi-book-open-variant" />
     </v-col>
     <v-col cols="12" md="3">
-      <StatCard title="Total Posts" :count="postsCount" icon="mdi-content-duplicate" />
+      <StatCard title="Total Posts" :count="data.postsCount" icon="mdi-content-duplicate" />
     </v-col>
     <v-col cols="12" md="3">
-      <StatCard title="Total Subscribers" :count="subscriberCount" icon="mdi-account-multiple" />
+      <StatCard
+        title="Total Subscribers"
+        :count="data.subscriberCount"
+        icon="mdi-account-multiple"
+      />
     </v-col>
   </v-row>
 </template>
