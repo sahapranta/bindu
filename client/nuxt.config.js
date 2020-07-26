@@ -32,9 +32,6 @@ module.exports = {
     // router: {
     // middleware: ["auth", "guest"]
     // },
-    // router: {
-        // base: "/bindu/"
-    // },
     plugins: [
         // "~components/global",
         // "~plugins/i18n",
@@ -45,6 +42,9 @@ module.exports = {
     modules: ["@nuxtjs/router"],
     build: {
         extractCSS: true
+    },
+    router: {
+        base: "/bindu/"
     },
     buildModules: ["@nuxtjs/vuetify"],
     hooks: {
